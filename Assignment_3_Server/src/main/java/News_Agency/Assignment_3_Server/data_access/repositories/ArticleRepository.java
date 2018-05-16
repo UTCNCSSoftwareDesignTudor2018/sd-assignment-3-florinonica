@@ -10,10 +10,12 @@ import News_Agency.Assignment_3_Server.data_access.entities.Article;
 import News_Agency.Assignment_3_Server.data_access.entities.Author;
 
 @Repository
-public interface ArticleRepository extends JpaRepository<Article, Long>{
-	public Optional<Article> findById(Long id);
+public interface ArticleRepository extends JpaRepository<Article, Integer>{
+	public Optional<Article> findById(int id);
 	
 	public Article findByTitle(String title);
+	
+	public Article deleteByTitle(String title);
 	
 	public List<Article> findAllByAuthor(Author author);
 	

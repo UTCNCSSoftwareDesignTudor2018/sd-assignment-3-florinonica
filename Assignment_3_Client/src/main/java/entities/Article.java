@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 public class Article implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private Long id;
+	private int id;
 	private Author author;
 	private String title;
 	private String summary;
 	private String body;
 	
-	public Article(Long id, Author author, String title, String summary, String body) {
+	public Article(int id, Author author, String title, String summary, String body) {
 		this.id = id;
 		this.author = author;
 		this.title = title;
@@ -20,10 +20,10 @@ public class Article implements Serializable {
 	
 	public Article() {}
 	
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public Author getAuthor() {
@@ -49,9 +49,6 @@ public class Article implements Serializable {
 	}
 	public void setBody(String body) {
 		this.body = body;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 }

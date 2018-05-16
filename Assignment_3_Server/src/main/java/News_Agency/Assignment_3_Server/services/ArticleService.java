@@ -14,12 +14,16 @@ public class ArticleService {
 	@Autowired
 	private ArticleRepository articleRepository;
 	
-	public Article getArticleById(Long id) {
+	public Article getArticleById(int id) {
 		return articleRepository.findById(id).get();
 	}
 	
 	public Article getArticleByTitle(String title) {
 		return articleRepository.findByTitle(title);
+	}
+	
+	public void delete(String title) {
+		articleRepository.deleteByTitle(title);
 	}
 	
 	public List<Article> getArticleByAuthor(Author author) {
@@ -28,5 +32,9 @@ public class ArticleService {
 	
 	public List<Article> getAll() {
 		return articleRepository.findAll();
+	}
+	
+	public Article saveArticle(Article a) {
+		return articleRepository.save(a);
 	}
 }

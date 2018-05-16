@@ -19,7 +19,7 @@ public class Article implements Serializable {
 
 	@Id
 	@Column(name = "id")
-	private Long id;
+	private int id;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "authorid")
@@ -36,7 +36,7 @@ public class Article implements Serializable {
 	@Column(name = "body")
 	private String body;
 
-	public Article(Long id, Author author, String title, String summary, String body) {
+	public Article(int id, Author author, String title, String summary, String body) {
 		this.id = id;
 		this.author = author;
 		this.title = title;
@@ -46,11 +46,11 @@ public class Article implements Serializable {
 	
 	public Article() {}
 	
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

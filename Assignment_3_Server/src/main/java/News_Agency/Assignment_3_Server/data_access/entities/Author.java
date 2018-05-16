@@ -20,7 +20,7 @@ public class Author implements Serializable {
 	private Long id;
 
 	@Column(name = "username")
-	private String userName;
+	private String username;
 
 	@Column(name = "password")
 	private String password;
@@ -34,16 +34,18 @@ public class Author implements Serializable {
 	@Column(name = "lastname")
 	private String lastName;
 	
-	public Author(Long id, String userName, String password, String email, String firstName, String lastName) {
+	public Author() {}
+	
+	public Author(Long id, String username, String password, String email, String firstName, String lastName) {
 		this.id = id;
-		this.userName = userName;
+		this.username = username;
 		this.password = password;
 		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 	
-	public Author() {}
+	
 	
 	public Long getId() {
 		return id;
@@ -53,12 +55,12 @@ public class Author implements Serializable {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String userName) {
+		this.username = userName;
 	}
 
 	public String getPassword() {

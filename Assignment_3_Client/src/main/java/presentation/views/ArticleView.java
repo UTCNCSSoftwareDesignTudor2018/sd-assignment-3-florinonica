@@ -1,22 +1,25 @@
 package presentation.views;
 
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
+import entities.Article;
 
 @SuppressWarnings("serial")
 public class ArticleView extends JFrame{
+	private Article article;
 	private JPanel content;
-	private JTextField title;
+	private JTextField articleTitle;
 	private JTextField summary;
 	private JTextField contents;
 	JButton update;
 	JButton delete;
 	JButton articleList;
+	private JTextField author;
 	
 	public ArticleView() {
 		this.setTitle("Article View");
@@ -26,44 +29,52 @@ public class ArticleView extends JFrame{
 		this.setContentPane(content);
 		content.setLayout(null);
 		
-		title = new JTextField();
-		title.setBounds(30, 27, 452, 25);
-		content.add(title);
-		title.setColumns(10);
+		articleTitle = new JTextField();
+		articleTitle.setBounds(30, 20, 450, 25);
+		content.add(articleTitle);
+		articleTitle.setColumns(10);
 		
 		summary = new JTextField();
-		summary.setBounds(30, 77, 452, 148);
+		summary.setBounds(30, 120, 450, 150);
 		content.add(summary);
 		summary.setColumns(10);
 		
 		contents = new JTextField();
-		contents.setBounds(30, 255, 503, 448);
+		contents.setBounds(30, 300, 500, 450);
 		content.add(contents);
 		contents.setColumns(10);
 		
 		update = new JButton("Update");
-		update.setBounds(110, 760, 89, 23);
+		update.setBounds(110, 800, 100, 25);
 		content.add(update);
 		
 		delete = new JButton("Delete");
-		delete.setBounds(284, 760, 89, 23);
+		delete.setBounds(284, 800, 100, 25);
 		content.add(delete);
 		
 		articleList = new JButton("Article List");
-		articleList.setBounds(215, 833, 89, 23);
+		articleList.setBounds(215, 875, 100, 25);
 		content.add(articleList);
 		
 		update.setVisible(false);
 		delete.setVisible(false);
-		title.setEditable(false);
+		
+		articleTitle.setEditable(false);
 		summary.setEditable(false);
 		contents.setEditable(false);
+		
+		author = new JTextField();
+		author.setBounds(30, 70, 450, 25);
+		content.add(author);
+		author.setColumns(10);
+		author.setEditable(false);
 	}
 	
-	public void AuthorView() {
+	public void authorView() {
 		update.setVisible(true);
 		delete.setVisible(true);
-		title.setEditable(true);
+		author.setEditable(true);
+		articleTitle.setEditable(true);
 		summary.setEditable(true);
 		contents.setEditable(true);
 	}
@@ -81,11 +92,11 @@ public class ArticleView extends JFrame{
 	}
 
 	public String getTitle() {
-		return title.getText();
+		return articleTitle.getText();
 	}
 
-	public void setTitle(String title) {
-		this.title.setText(title);
+	public void setArticleTitles(String title) {
+		this.articleTitle.setText(title);
 	}
 
 	public String getSummary() {
@@ -104,4 +115,19 @@ public class ArticleView extends JFrame{
 		this.contents.setText(contents);
 	}
 
+	public Article getArticle() {
+		return article;
+	}
+
+	public void setArticle(Article article) {
+		this.article = article;
+	}
+	
+	public String getAuthor() {
+		return author.getText();
+	}
+
+	public void setAuthor(String author) {
+		this.author.setText(author);
+	}
 }

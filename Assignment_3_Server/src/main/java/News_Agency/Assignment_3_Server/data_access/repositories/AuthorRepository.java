@@ -11,5 +11,5 @@ import News_Agency.Assignment_3_Server.data_access.entities.Author;
 public interface AuthorRepository extends JpaRepository<Author, Long>{
 	public Optional<Author> findById(Long id);
 	
-	public Author findByUsernameAndPassword(String userName, String password);
+	public Author findByUsernameAndPassword(String username, String password);
 }

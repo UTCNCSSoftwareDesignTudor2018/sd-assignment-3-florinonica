@@ -14,6 +14,7 @@ public class Server implements Runnable{
 				while(true)
 				{
 					new Thread(new ClientHandler(server.accept())).start();
+					System.out.println("New client");
 				}
 				
 			} finally {
